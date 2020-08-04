@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar color="success">
+    <ion-title>Crud</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <div class="">
+    <ion-item >
+      <ion-input type="text" placeholder="Name" [(ngModel)]="your_name"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label style="color: #999;">Gender</ion-label>
+      <ion-select interface="popover" [(ngModel)]="gender">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: #999;">date of birth</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="date_birth" min="1945-08-17" max="2019-12-01"></ion-datetime>
+    </ion-item>
+    <ion-item >
+      <ion-input type="text" placeholder="email" *ngIf="id==0" [(ngModel)]="email_address"></ion-input>
+      <ion-input type="text" placeholder="email" *ngIf="id!=0" readonly="true" [(ngModel)]="email_address"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-input type="password" placeholder="password" [(ngModel)]="password"></ion-input>
+    </ion-item> 
+    <ion-button expand="full" class="ion-padding" *ngIf="id==0" color="success"(click)="crudAction('Create')" [disabled]="disabledButton">submit</ion-button>
+    <ion-button expand="full" class="ion-padding" *ngIf="id!=0" readonly="true" color="success"(click)="crudAction('Update')" [disabled]="disabledButton">update</ion-button>
+
+  </div>
+</ion-list>
+</ion-content>

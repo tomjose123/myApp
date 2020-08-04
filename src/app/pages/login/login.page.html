@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-img">
+    <ion-img item src="/assets/login.png"></ion-img>
+  </div>
+  
+<ion-list>
+  <div class="">
+    <ion-item >
+      <ion-input type="text" placeholder="Email" [(ngModel)]="email_address"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item> 
+    <ion-button expand="full" class="ion-padding" color="primary"(click)="tryLogin()" >Login</ion-button>
+
+    <p class="ion-padding info-1">
+      If you dont have an account <span (click)="openRegister()">Register Now</span>
+    </p> 
+  </div>
+</ion-list>
+</ion-content>
